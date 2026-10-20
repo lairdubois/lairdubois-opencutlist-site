@@ -31,29 +31,12 @@ in memory, hidden if the API fails).
 - Without a deploy : `SITE_LAB_URL`, `SITE_LAB_BUILD`, `SITE_STABLE_URL` in
   `/etc/ocl-site.env`, then `sudo systemctl restart ocl-site`.
 
-## Production (Debian 12, NGINX, systemd)
+## Production
 
-Same layout as OpenCutList Localize, on the same server : one Puma process on `127.0.0.1:3008` behind NGINX.
+One Puma process on `127.0.0.1:3008` behind NGINX, on the same server as OpenCutList Localize. First
+install, updates, overrides without a deploy, logs : see [`deploy/README.md`](deploy/README.md).
 
-    /var/www/www.opencutlist.org/   home of the ocl-site system user
-      .rbenv/                       Ruby 4.0.1
-      app/                          the code, NGINX serves app/public
-      acme/                         Let's Encrypt challenges (certbot webroot)
-    /etc/ocl-site.env               environment (SECRET_KEY_BASE, overrides)
-
-Prerequisites : DNS `www.opencutlist.org` and `opencutlist.org` → the server, certbot, an SSH account with
-sudo, port 3008 free.
-
-First install (packages, user, Ruby, environment, service, certificate for www + apex, NGINX site, then deploy) :
-
-    DEPLOY_HOST=you@<server> deploy/deploy.sh setup
-
-Updates :
-
-    DEPLOY_HOST=you@<server> deploy/deploy.sh
-
-`opencutlist.org` redirects to `www.opencutlist.org`. Logs : `journalctl -u ocl-site -f`. Console :
-`sudo ocl-site-rails console`.
+    DEPLOY_HOST=you@<server> deploy/deploy.sh          # update (first time : deploy/deploy.sh setup)
 
 ## License
 

@@ -5,8 +5,8 @@
     <span><%= brand(t("download.stable.button", version: Site.stable.version)) %></span>
     <small><%= t("download.stable.detail") %></small>
   <% end %>
-  <%= link_to Site.lab.url, class: "btn #{lab_class}", download: true do %>
-    <span><%= brand(t("download.lab.button", version: Site.lab.version)) %> <span class="lab-pill text-[0.8em]">LAB</span></span>
-    <small><%= [ t("download.lab.detail"), Site.lab.build ].compact.join(" · ") %></small>
+  <%= link_to lab_path, class: "btn #{lab_class}" do %>
+    <span><%= brand(t("download.lab.button", version: Site.lab.version)) %></span>
+    <small><%= [ t("download.lab.page_detail"), Site.lab.build ].compact.join(" · ") %></small>
   <% end %>
 </div>

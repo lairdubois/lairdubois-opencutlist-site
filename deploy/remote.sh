@@ -8,8 +8,9 @@ app=$home/app
 [ -f /etc/ocl-site.env ] || { echo "server not set up : deploy/deploy.sh setup" >&2; exit 1; }
 [ -x "$home/.rbenv/versions/4.0.1/bin/bundle" ] || { echo "Ruby 4.0.1 missing : deploy/deploy.sh setup" >&2; exit 1; }
 
-# What only exists on the server (logs, builds, gems) is excluded, hence kept by --delete
-rsync -a --delete --chown=ocl-site:ocl-site \
+# What only exists on the server (logs, builds, gems) is excluded, hence kept by --delete.
+# a+rX : NGINX (www-data) must read public/ and the precompiled assets, whatever the local file modes
+rsync -a --delete --chown=ocl-site:ocl-site --chmod=a+rX \
   --exclude /log/ --exclude /tmp/ \
   --exclude /public/assets/ --exclude /app/assets/builds/ --exclude /vendor/bundle/ --exclude /.bundle/ \
   "$src/" "$app/"
@@ -26,6 +27,8 @@ sudo -u ocl-site bash -c "
   bundle config set --local without development:test
   bundle install --quiet
   bin/rails assets:precompile
+  # Propshaft keeps an existing digest file as is : fixes assets compiled from an unreadable source
+  chmod -R a+rX public/assets
 "
 
 systemctl restart ocl-site
