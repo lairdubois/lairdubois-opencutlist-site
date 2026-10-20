@@ -1,0 +1,45 @@
+<% content_for :title, t("download.title") %>
+<% content_for :description, t("download.description") %>
+
+<section class="bg-brand text-ink">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-14">
+    <h1 class="display display-2 text-white"><%= brand(t("download.title")) %></h1>
+    <p class="mt-4 text-lg font-medium max-w-2xl"><%= t("download.requirements") %></p>
+  </div>
+</section>
+
+<section class="mx-auto max-w-6xl px-4 sm:px-6 py-14 grid gap-6 md:grid-cols-2">
+  <article class="bg-white p-7 flex flex-col border-t-8 border-ink">
+    <p class="label text-xs text-ink-soft"><%= t("download.stable.kicker") %></p>
+    <h2 class="display display-3 mt-3"><%= brand("OpenCutList #{Site.stable.version}") %></h2>
+    <p class="mt-4 flex-1"><%= t("download.stable.text") %></p>
+    <div class="mt-6 flex flex-wrap items-center gap-4">
+      <%= external_link_to Site.stable.url, class: "btn btn-ink" do %>
+        <span><%= brand(t("download.stable.button", version: Site.stable.version)) %></span>
+        <small><%= t("download.stable.detail") %></small>
+      <% end %>
+      <% if Site.stable.changelog_url %>
+        <%= external_link_to t("download.changelog"), Site.stable.changelog_url, class: "link font-semibold" %>
+      <% end %>
+    </div>
+  </article>
+
+  <article class="bg-white p-7 flex flex-col border-t-8 border-lab">
+    <p class="label text-xs text-ink-soft flex items-center gap-2"><%= t("download.lab.kicker_html", lab: tag.span("LAB", class: "lab-pill")) %></p>
+    <h2 class="display display-3 mt-3"><%= brand("OpenCutList #{Site.lab.version} LAB") %></h2>
+    <p class="mt-4 flex-1"><%= t("download.lab.text") %></p>
+    <div class="mt-6 flex flex-wrap items-center gap-4">
+      <%= link_to lab_path, class: "btn btn-brand" do %>
+        <span><%= brand(t("download.lab.button", version: Site.lab.version)) %></span>
+        <small><%= [ t("download.lab.page_detail"), Site.lab.build ].compact.join(" · ") %></small>
+      <% end %>
+      <%= link_to t("lab.install.link"), lab_path(anchor: "install"), class: "link font-semibold" %>
+    </div>
+  </article>
+</section>
+
+<section class="mx-auto max-w-6xl px-4 sm:px-6 pb-16">
+  <p class="text-ink-soft">
+    <%= t("download.docs_html", docs: external_link_to(t("download.docs_link"), Site.link(:docs), class: "link text-ink font-semibold")) %>
+  </p>
+</section>

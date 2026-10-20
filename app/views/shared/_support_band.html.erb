@@ -1,0 +1,19 @@
+<section class="bg-white border-y-4 border-brand">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-14 grid gap-10 md:grid-cols-2 md:items-center">
+    <div>
+      <p class="text-xs text-brand-dark"><%= brand(t("campaign.kicker")) %></p>
+      <h2 class="display display-2 mt-3"><%= brand(t("campaign.title")) %></h2>
+      <p class="mt-4 text-lg max-w-prose"><%= t("campaign.text") %></p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <%= external_link_to Site.link(:contribute), class: "btn btn-lab" do %>
+          <span><%= t("campaign.button") %></span>
+          <small>opencollective.com</small>
+        <% end %>
+        <% unless current_page?(support_path) %>
+          <%= link_to t("campaign.more"), support_path, class: "self-center link font-semibold" %>
+        <% end %>
+      </div>
+    </div>
+    <%= render "shared/gauge", campaign: @campaign %>
+  </div>
+</section>

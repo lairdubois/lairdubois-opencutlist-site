@@ -1,0 +1,18 @@
+<%# The collective's current balance from Open Collective against the goal ; nothing when the API didn't answer %>
+<% goal = Site.campaign_goal %>
+<% if campaign %>
+  <% percent = goal.positive? ? [ campaign.balance * 100 / goal, 100 ].min : 0 %>
+  <div>
+    <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+      <p class="display text-3xl sm:text-4xl text-ink"><%= t("campaign.percent", percent:) %></p>
+      <p class="text-sm text-ink-soft"><%= money(campaign.balance) %> <%= t("campaign.goal", goal: money(goal)) %></p>
+    </div>
+    <div class="mt-3 h-4 bg-ink/15" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="<%= percent %>"
+         aria-label="<%= t("campaign.progress", percent:) %>">
+      <div class="h-full bg-lab" style="width: <%= [ percent, 1 ].max %>%"></div>
+    </div>
+    <p class="mt-2 text-sm opacity-80">
+      <%= t("campaign.contributors", count: campaign.contributors, formatted: number_with_delimiter(campaign.contributors)) %>
+    </p>
+  </div>
+<% end %>

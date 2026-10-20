@@ -1,0 +1,12 @@
+<%# Both downloads side by side. lab_class : the LAB button's style on this background %>
+<% lab_class = local_assigns.fetch(:lab_class, "btn-light") %>
+<div class="flex flex-wrap gap-3">
+  <%= external_link_to Site.stable.url, class: "btn btn-ink" do %>
+    <span><%= brand(t("download.stable.button", version: Site.stable.version)) %></span>
+    <small><%= t("download.stable.detail") %></small>
+  <% end %>
+  <%= link_to Site.lab.url, class: "btn #{lab_class}", download: true do %>
+    <span><%= brand(t("download.lab.button", version: Site.lab.version)) %> <span class="lab-pill text-[0.8em]">LAB</span></span>
+    <small><%= [ t("download.lab.detail"), Site.lab.build ].compact.join(" · ") %></small>
+  <% end %>
+</div>

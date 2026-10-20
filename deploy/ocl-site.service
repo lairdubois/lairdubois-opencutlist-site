@@ -1,0 +1,29 @@
+# /etc/systemd/system/ocl-site.service
+# Puma listening on 127.0.0.1:3008 behind NGINX
+[Unit]
+Description=OpenCutList website (Rails)
+After=network.target
+
+[Service]
+Type=simple
+User=ocl-site
+Group=ocl-site
+WorkingDirectory=/var/www/www.opencutlist.org/app
+EnvironmentFile=/etc/ocl-site.env
+Environment=PATH=/var/www/www.opencutlist.org/.rbenv/versions/4.0.1/bin:/usr/local/bin:/usr/bin:/bin
+Environment=LD_PRELOAD=libjemalloc.so.2
+ExecStart=/var/www/www.opencutlist.org/.rbenv/versions/4.0.1/bin/ruby bin/rails server
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+KillMode=mixed
+
+# Hardening : the app only writes to its log and tmp directories
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/var/www/www.opencutlist.org/app/log /var/www/www.opencutlist.org/app/tmp
+
+[Install]
+WantedBy=multi-user.target

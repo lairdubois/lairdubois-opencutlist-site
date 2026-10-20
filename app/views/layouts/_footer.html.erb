@@ -1,0 +1,19 @@
+<footer class="bg-ink text-white/80 text-sm">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid gap-8 sm:grid-cols-[1fr_auto]">
+    <div class="flex items-start gap-4">
+      <%= image_tag "ocl-icon.svg", alt: "", class: "size-12 shrink-0" %>
+      <p class="max-w-md">
+        <%= t("footer.about_html", lairdubois: external_link_to("L'Air du Bois", Site.link(:lairdubois), class: "link text-white"),
+                                   license: external_link_to(t("footer.license"), Site.link(:license), class: "link text-white")) %>
+      </p>
+    </div>
+    <ul class="label text-xs grid grid-cols-2 gap-x-8 gap-y-2">
+      <li><%= link_to t("nav.download"), download_path, class: "hover:text-brand" %></li>
+      <li><%= external_link_to t("nav.docs"), Site.link(:docs), class: "hover:text-brand" %></li>
+      <li><%= link_to "#{t('nav.lab')} LAB", lab_path, class: "hover:text-brand" %></li>
+      <li><%= external_link_to "GitHub", Site.link(:github), class: "hover:text-brand" %></li>
+      <li><%= link_to t("nav.support"), support_path, class: "hover:text-brand" %></li>
+      <li><%= external_link_to "Open Collective", Site.link(:open_collective), class: "hover:text-brand" %></li>
+    </ul>
+  </div>
+</footer>

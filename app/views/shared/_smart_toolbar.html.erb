@@ -1,0 +1,8 @@
+<%# The Smart tools bar of OpenCutList 8, as drawn in the videos : Smart Build checked %>
+<div class="grid grid-cols-7 gap-1.5 sm:gap-2 max-w-lg md:ml-auto w-full" aria-hidden="true">
+  <% smart_icons.each do |icon| %>
+    <span class="aspect-square p-1.5 sm:p-2 <%= icon == "build" ? "bg-brand" : "bg-white/90" %>">
+      <%= image_tag "smart/smart-#{icon}.svg", alt: "", class: "size-full #{'bg-white' if icon == 'build'}" %>
+    </span>
+  <% end %>
+</div>

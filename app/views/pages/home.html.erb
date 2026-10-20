@@ -1,0 +1,44 @@
+<section class="bg-brand text-ink">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16 sm:py-24 grid gap-10 md:grid-cols-[1fr_auto] md:items-center">
+    <div>
+      <p class="text-sm"><%= t("home.hero.kicker") %></p>
+      <h1 class="display display-1 text-white mt-4"><%= t("home.hero.title") %></h1>
+      <p class="mt-6 text-lg sm:text-xl max-w-2xl font-medium"><%= t("home.hero.text") %></p>
+      <div class="mt-8"><%= render "shared/download_buttons" %></div>
+    </div>
+    <%= image_tag "ocl-icon.svg", alt: "OpenCutList", class: "hidden md:block size-56 lg:size-64" %>
+  </div>
+</section>
+
+<section class="bg-ink text-white">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16 grid gap-10 md:grid-cols-2 md:items-center">
+    <div>
+      <p class="text-sm flex items-center gap-3"><%= brand("OpenCutList #{Site.lab.version}") %> <span class="lab-pill">LAB</span></p>
+      <h2 class="display display-2 mt-4 text-brand"><%= t("home.lab.title") %></h2>
+      <p class="mt-5 text-lg text-white/85 max-w-prose"><%= t("home.lab.text") %></p>
+      <p class="mt-3 text-lg text-white/85 max-w-prose"><%= t("home.lab.stretch") %></p>
+      <div class="mt-7 flex flex-wrap items-center gap-4">
+        <%= link_to lab_path, class: "btn btn-brand" do %>
+          <span><%= t("home.lab.button") %></span>
+          <small><%= t("home.lab.episodes") %></small>
+        <% end %>
+      </div>
+    </div>
+    <%= render "shared/smart_toolbar" %>
+  </div>
+</section>
+
+<%= render "shared/support_band" %>
+
+<section class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+  <h2 class="display display-2"><%= brand(t("home.features.title")) %></h2>
+  <div class="mt-8 grid gap-6 sm:grid-cols-3">
+    <% t("home.features.items").each_with_index do |item, index| %>
+      <div class="bg-white p-6 border-t-8 border-brand">
+        <p class="label text-xs text-brand-dark"><%= format("%02d", index + 1) %></p>
+        <h3 class="display text-xl mt-3"><%= brand(item[:title]) %></h3>
+        <p class="mt-3 text-ink-soft"><%= item[:text] %></p>
+      </div>
+    <% end %>
+  </div>
+</section>

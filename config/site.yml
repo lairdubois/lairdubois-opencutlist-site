@@ -1,0 +1,53 @@
+# Site content that changes with releases and the campaign. Edit, then deploy (or restart).
+# A few values can be overridden by the environment (/etc/ocl-site.env) without a deploy.
+
+shared:
+  stable:
+    version: "7.1"
+    # Extension Warehouse page : SketchUp users install and update from there
+    url: <%= ENV.fetch("SITE_STABLE_URL", "https://extensions.sketchup.com/extension/00f0bf69-7a42-4295-9e1c-226080814e3e/open-cut-list") %>
+    changelog_url: https://www.lairdubois.fr/opencutlist/changelog
+
+  lab:
+    version: "8"
+    # Shown next to the download button when set, e.g. "8.0.0-lab.3"
+    build: <%= ENV.fetch("SITE_LAB_BUILD", "") %>
+    # Direct .rbz download
+    url: <%= ENV.fetch("SITE_LAB_URL", "https://raw.githubusercontent.com/lairdubois/lairdubois-opencutlist-sketchup-extension/8.0.0/dist/ladb_opencutlist.rbz") %>
+    changelog_url: https://www.lairdubois.fr/opencutlist/changelog-dev
+
+  campaign:
+    # Open Collective account whose current balance fills the gauge (its currency : USD)
+    collective: lairdubois-opencutlist-sketchup-extension
+    goal: 20000
+    currency: USD
+
+  links:
+    open_collective: https://opencollective.com/lairdubois-opencutlist-sketchup-extension
+    contribute: https://opencollective.com/lairdubois-opencutlist-sketchup-extension#section-contribute
+    docs: https://docs.opencutlist.org
+    translate: https://docs.opencutlist.org/for-translators/general
+    github: https://github.com/lairdubois/lairdubois-opencutlist-sketchup-extension
+    license: https://github.com/lairdubois/lairdubois-opencutlist-sketchup-extension/blob/master/LICENSE
+    lairdubois: https://www.lairdubois.fr
+    # The French L'Air du Bois thread of the campaign, once posted
+    lairdubois_thread:
+    sketchup_forum: https://forums.sketchup.com/t/opencutlist-a-crowdfunded-extension-8-0-campaign/301089
+    youtube:
+
+  # One video every Thursday. Only the released ones (date passed) and the next one are shown ;
+  # add "url" once the video is online.
+  episodes:
+    - { date: 2026-10-29, title: "Trailer" }
+    - { date: 2026-11-05, title: "Smart Draw" }
+    - { date: 2026-11-12, title: "Smart Build Divider" }
+    - { date: 2026-11-19, title: "Smart Build Front Panel" }
+    - { date: 2026-11-26, title: "Smart Build Back Panel" }
+    - { date: 2026-12-03, title: "Smart Stretch" }
+    - { date: 2026-12-10, title: "Smart Build Module" }
+    - { date: 2026-12-17, title: "Smart Boolean" }
+    - { date: 2027-01-07, title: "Smart Paneling" }
+    - { date: 2027-01-14, title: "Grain continuity and cutlist filters" }
+    - { date: 2027-01-21, title: "BXF2 and CSV import" }
+    - { date: 2027-01-28, title: "Paint, Export and Axes" }
+    - { date: 2027-02-04, title: "What comes next" }

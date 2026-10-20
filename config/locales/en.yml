@@ -1,0 +1,139 @@
+en:
+  site:
+    title: "OpenCutList - Open Source Woodworking Extension for SketchUp"
+    description: "OpenCutList is an open source, crowdfunded SketchUp extension for woodworkers: design, cutlist, cutting diagrams, labels, cost and weight in one extension."
+
+  nav:
+    download: Download
+    lab: Version 8
+    support: Support
+    docs: Documentation
+    docs_short: Docs
+    language: Version française
+
+  footer:
+    about_html: "OpenCutList is an open source project started by %{lairdubois}, crowdfunded by its users and published under the %{license}."
+    license: GPL v3 license
+
+  download:
+    title: Download OpenCutList
+    description: "Download OpenCutList 7.1, the stable version, from the SketchUp Extension Warehouse, or try OpenCutList 8 LAB."
+    requirements: "Open source, on Windows and macOS, from SketchUp 2017 to the latest release."
+    changelog: Release notes
+    docs_html: "Getting started, tutorials and every feature explained: %{docs}."
+    docs_link: read the documentation
+    stable:
+      kicker: Stable version
+      button: "Get OpenCutList %{version}"
+      detail: SketchUp Extension Warehouse
+      text: "The version for your everyday projects. Install it from the Extension Warehouse, in your browser or straight from SketchUp (Extensions › Extension Warehouse), and SketchUp keeps it up to date."
+    lab:
+      kicker_html: "%{lab} version"
+      button: "Get OpenCutList %{version}"
+      detail: .rbz file
+      page_detail: LAB
+      text: "The most advanced build of version 8, updated as fast as we improve it. Save your models before trying it, and tell us what you think."
+
+  home:
+    hero:
+      kicker: Open source, crowdfunded extension for SketchUp
+      title: From the first box to the cutting diagram.
+      text: "Design your furniture in SketchUp, then get its cutlist, cutting diagrams, labels, cost and weight, all in one extension."
+    lab:
+      title: Draw freely, build smart.
+      text: "The Smart Build tools understand the cabinet you drew: they find its cavities and fill them with dividers, fronts and backs. No closed catalogue to fit into."
+      stretch: "Resize without redrawing: Smart Stretch makes a whole cabinet wider, taller or deeper, and every part stays right."
+      button: Try the LAB version
+      episodes: A new video every Thursday
+    features:
+      title: Why OpenCutList?
+      items:
+        - title: Open source, crowdfunded by its users.
+          text: "No subscription, no licence key. Open Collective keeps it alive."
+        - title: Your model stays yours.
+          text: "Plain SketchUp groups and components, readable without OpenCutList."
+        - title: Runs on the SketchUp you have.
+          text: "From SketchUp 2017 to the latest release, on Windows and macOS."
+
+  lab:
+    description: "OpenCutList 8 LAB: the most advanced build of OpenCutList 8, with the new Smart Build and Smart Stretch tools. Try it and share your feedback."
+    intro: "The LAB version is the most advanced build of OpenCutList 8, updated as fast as we improve it. Try it, and tell us what you think: your feedback shapes 8.0."
+    changelog: What changed in each LAB build
+    notice:
+      title: A version in progress
+      text: "The LAB version is the one we are developing: it may not include every language yet, and some features may still change."
+    new:
+      title: "New in version %{version}"
+      items:
+        - title: Smart Build
+          text: "Dividers, front panels, back panels and modules, placed in the cavities of the cabinet you drew."
+        - title: Smart Stretch
+          text: "Resize a whole piece of furniture without distorting its parts."
+        - title: Paneling and Boolean tools
+          text: "More Smart tools, shown in the coming episodes."
+        - title: Grain continuity
+          text: "The grain runs from one part to the next, and the cutlist can be filtered by name and tag."
+        - title: BXF2 and CSV import
+          text: "Bring in data from other software."
+        - title: Paint, Export and Axes rewritten
+          text: "Rectangle selection, selection filter and new shortcuts."
+    install:
+      link: How to install?
+      title: Install the LAB version
+      steps:
+        - "Save your models: LAB builds move fast."
+        - "If OpenCutList 7 is installed, uninstall it from Extensions › Extension Manager, then restart SketchUp before going further."
+        - "Download the .rbz file with the button above."
+        - "In SketchUp, open Extensions › Extension Manager, click Install Extension and choose the file."
+        - "After installation, updates are made directly from OpenCutList. A new LAB build is announced by the orange dot."
+    back:
+      title: "Back to version %{version}"
+      text_html: "Uninstall OpenCutList from the Extension Manager, restart SketchUp, then install version %{version} from the %{warehouse}."
+    feedback:
+      title: Share your feedback
+      text: "Something feels off, or you have an idea? Tell us, with your SketchUp version, your OpenCutList build number and a screenshot."
+      channels:
+        sketchup_forum: in English
+        lairdubois_thread: in French
+        open_collective: reply to the news
+        youtube: comment on the videos
+    episodes:
+      title: A new feature every Thursday
+      text: "Each week, a short video shows one feature of OpenCutList 8, on the same cabinet built episode after episode."
+      watch: Watch
+      next: "Coming %{date}"
+
+  campaign:
+    kicker: Crowdfunding Campaign
+    title: Support the project
+    text: "OpenCutList is open source and crowdfunded: it lives thanks to your support. If version 8 saves you time, consider backing the project on Open Collective."
+    button: Contribute on Open Collective
+    more: How the project is funded?
+    goal: "of a %{goal} goal"
+    progress: "%{percent}% of the goal"
+    percent: "%{percent}%"
+    contributors:
+      one: "%{formatted} contributor on Open Collective"
+      other: "%{formatted} contributors on Open Collective"
+
+  support:
+    title: Support OpenCutList
+    description: "OpenCutList is open source and crowdfunded by its users through Open Collective."
+    headline: Open source, crowdfunded by its users.
+    paragraphs:
+      - "No subscription, no licence key: OpenCutList is developed in the open and paid for by the people who use it."
+      - "Contributions go through Open Collective, which publishes every contribution and every expense of the project."
+    other:
+      title: Other ways to help
+      test:
+        title: Try the LAB version
+        text: "Test OpenCutList 8 on your own projects and share your feedback: it shapes the stable release."
+        link: Get the LAB version
+      translate:
+        title: Translate OpenCutList
+        text: "OpenCutList speaks many languages thanks to its volunteer translators."
+        link: Become a translator
+      share:
+        title: Spread the word
+        text: "Share the videos and tell other woodworkers about OpenCutList."
+        link: Watch the series

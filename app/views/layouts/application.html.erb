@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+  <head>
+    <title><%= page_title %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="<%= content_for(:description).presence || t("site.description") %>">
+    <meta name="theme-color" content="#3e3b33">
+    <meta property="og:site_name" content="OpenCutList">
+    <meta property="og:title" content="<%= page_title %>">
+    <meta property="og:description" content="<%= content_for(:description).presence || t("site.description") %>">
+    <meta property="og:url" content="<%= locale_url(I18n.locale) %>">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="<%= locale_url(I18n.locale) %>">
+    <% alternate_locales.each do |locale| %>
+      <link rel="alternate" hreflang="<%= locale %>" href="<%= locale_url(locale) %>">
+    <% end %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <%= preload_link_tag "display.woff2", as: "font", type: "font/woff2", crossorigin: "anonymous" %>
+
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="min-h-screen flex flex-col font-sans antialiased">
+    <%= render "layouts/header" %>
+    <main class="flex-1">
+      <%= yield %>
+    </main>
+    <%= render "layouts/footer" %>
+  </body>
+</html>

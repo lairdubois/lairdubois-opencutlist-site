@@ -1,0 +1,71 @@
+@import "tailwindcss" source(none);
+
+/* Explicit sources : the deployed copy has no .git, so automatic detection would also scan vendor/bundle. */
+@source "../../views";
+@source "../../helpers";
+@source "../../javascript";
+
+/* Charte of the OpenCutList 8 campaign (ocl-video templates/charte.css) :
+   Lexend Exa for titles, Lexend for text, monofur (the logo's font) for labels. */
+@font-face { font-family: "Display"; src: url("display.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Text"; src: url("text.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Mono"; src: url("mono.woff") format("woff"); font-weight: 700; font-display: swap; }
+
+@theme {
+  --color-brand: #f77f00;
+  --color-brand-dark: #d96f00;
+  --color-ink: #3e3b33;
+  --color-ink-soft: #6a665c;
+  --color-lab: #e84fa9;
+  --color-lab-dark: #c93a8c;
+  --color-paper: #f7f3ec;
+  --font-sans: "Text", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Display", "Text", ui-sans-serif, sans-serif;
+  --font-mono: "Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { background: var(--color-paper); color: var(--color-ink); }
+}
+
+@layer components {
+  /* Big uppercase titles, as on the video cards */
+  .display { font-family: var(--font-display); font-weight: 900; text-transform: uppercase; line-height: 1; letter-spacing: -0.01em; text-wrap: balance; }
+  /* Title sizes that follow the screen width, so the longest words (CONSTRUISEZ, UTILISATEURS) fit whole down to 320 px */
+  .display-1 { font-size: clamp(1.35rem, 7.5vw, 3.75rem); }
+  .display-2 { font-size: clamp(1.25rem, 6.5vw, 3rem); }
+  .display-3 { font-size: clamp(1.15rem, 5vw, 1.875rem); }
+  /* Labels in the logo's font */
+  .label { font-family: var(--font-mono); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+
+  .lab-pill { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.12em; background: var(--color-lab); color: #fff;
+    padding: 0.15em 0.5em; border-radius: 0.2em; display: inline-block; line-height: 1.2; }
+
+  /* Square buttons : a label line and a small detail line */
+  .btn { display: inline-flex; flex-direction: column; justify-content: center; gap: 0.2rem; padding: 0.8rem 1.4rem;
+    font-family: var(--font-sans); font-size: 1.0625rem; font-weight: 600; line-height: 1.2;
+    transition: background-color 120ms, color 120ms, transform 120ms; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn small { font-size: 0.8rem; font-weight: 400; opacity: 0.8; }
+  /* Stacked full width on phones */
+  @media (width < 40rem) { .btn { width: 100%; padding-inline: 1rem; } }
+  .btn-ink { background: var(--color-ink); color: #fff; }
+  .btn-ink:hover { background: #000; }
+  .btn-brand { background: var(--color-brand); color: #fff; }
+  .btn-brand:hover { background: var(--color-brand-dark); }
+  .btn-lab { background: var(--color-lab); color: #fff; }
+  .btn-lab:hover { background: var(--color-lab-dark); }
+  .btn-light { background: #fff; color: var(--color-ink); }
+  .btn-light:hover { background: var(--color-paper); }
+
+  .link { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; text-decoration-color: var(--color-brand); }
+  .link:hover { color: var(--color-brand-dark); }
+  /* On orange, the orange underline would vanish */
+  .bg-brand .link { text-decoration-color: currentColor; }
+  .bg-brand .link:hover { color: #fff; }
+
+  /* Prose of the content pages */
+  .prose-ocl p + p { margin-top: 0.9rem; }
+  .prose-ocl strong { font-weight: 700; }
+}
