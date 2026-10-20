@@ -62,7 +62,7 @@
       <h2 class="display display-3 text-brand"><%= t("lab.feedback.title") %></h2>
       <p class="mt-4 text-lg text-white/85"><%= t("lab.feedback.text") %></p>
       <ul class="mt-6 space-y-3">
-        <% { sketchup_forum: "SketchUp Forum", lairdubois_thread: "L'Air du Bois", open_collective: "Open Collective", youtube: "YouTube" }.each do |key, name| %>
+        <% { sketchup_forum: "SketchUp Forum", lairdubois_thread: "L'Air du Bois", open_collective_conversations: "Open Collective", youtube: "YouTube" }.each do |key, name| %>
           <% url = Site.link(key) || (Site.link(:lairdubois) if key == :lairdubois_thread) %>
           <% next unless url %>
           <li>
