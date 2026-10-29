@@ -32,7 +32,7 @@ See `README.md` for setup, pages and deployment.
 - "LAB version" / "version LAB" : the most advanced build, updated continuously. Never "beta" nor "bug" : we
   invite feedback and ideas.
 - Charte (ocl-video `templates/charte.css`) : orange `#f77f00`, dark `#3e3b33`, pink `#e84fa9` for the LAB pill, the
-  "Support" header link, the campaign gauge bar and the "Contribute on Open Collective" button only (`.btn-lab`, darker `#c93a8c` on hover) ; square corners.
+  "Donate" header link, the campaign gauge bar and the "Contribute on Open Collective" button only (`.btn-lab`, darker `#c93a8c` on hover) ; square corners.
 
 ## Hard rules
 

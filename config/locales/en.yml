@@ -6,7 +6,7 @@ en:
   nav:
     download: Download
     lab: Version 8
-    support: Support
+    support: Donate
     docs: Documentation
     docs_short: Docs
     language: Version française
@@ -99,7 +99,7 @@ en:
         youtube: comment on the videos
     episodes:
       title: A new feature every Thursday
-      text: "Each week, a short video shows one feature of OpenCutList 8, on the same cabinet built episode after episode."
+      text: "Each week, a short video shows one feature of OpenCutList 8."
       watch: Watch
       next: "Coming %{date}"
 

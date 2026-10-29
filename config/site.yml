@@ -39,7 +39,7 @@ shared:
   # One video every Thursday. Only the released ones (date passed) and the next one are shown ;
   # add "url" once the video is online.
   episodes:
-    - { date: 2026-10-29, title: "Trailer" }
+    - { date: 2026-10-29, title: "Trailer", url: "https://www.youtube.com/watch?v=V0yUHv39Fyo" }
     - { date: 2026-11-05, title: "Smart Draw" }
     - { date: 2026-11-12, title: "Smart Build Divider" }
     - { date: 2026-11-19, title: "Smart Build Front Panel" }

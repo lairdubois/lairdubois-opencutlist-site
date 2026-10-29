@@ -6,7 +6,7 @@ fr:
   nav:
     download: Télécharger
     lab: Version 8
-    support: Soutenir
+    support: Faire un don
     docs: Documentation
     docs_short: Doc
     language: English version
@@ -99,7 +99,7 @@ fr:
         youtube: en commentaire des vidéos
     episodes:
       title: Une nouveauté chaque jeudi
-      text: "Chaque semaine, une courte vidéo (en anglais, sous-titrée) montre une fonctionnalité d'OpenCutList 8, sur le même meuble construit d'épisode en épisode."
+      text: "Chaque semaine, une courte vidéo (en anglais, sous-titrée) montre une fonctionnalité d'OpenCutList 8."
       watch: Voir
       next: "Le %{date}"
 

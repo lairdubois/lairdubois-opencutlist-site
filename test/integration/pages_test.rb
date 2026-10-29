@@ -6,7 +6,7 @@ class PagesTest < ActionDispatch::IntegrationTest
   test "every page renders in every locale" do
     with_campaign(STATS) do
       %w[en fr].each do |locale|
-        %w[/ /lab /download /support].each do |page|
+        %w[/ /lab /download /donate].each do |page|
           get "/#{locale}#{page}".chomp("/")
           assert_response :success, "#{locale}#{page}"
           assert_select "html[lang=#{locale}]"
@@ -19,7 +19,7 @@ class PagesTest < ActionDispatch::IntegrationTest
   test "OpenCutList keeps its camel case in uppercase text" do
     with_campaign(STATS) do
       %w[en fr].each do |locale|
-        %w[/ /lab /download /support].each do |page|
+        %w[/ /lab /download /donate].each do |page|
           get "/#{locale}#{page}".chomp("/")
           uppercased = Nokogiri::HTML(response.body).css(".display, .label, .btn").flat_map { |node| node.xpath(".//text()") }
           offending = uppercased.select { |text| text.content.include?("OpenCutList") && !text.parent.classes.include?("normal-case") }
@@ -36,7 +36,7 @@ class PagesTest < ActionDispatch::IntegrationTest
   end
 
   test "the gauge shows the balance against the goal" do
-    with_campaign(STATS) { get "/en/support" }
+    with_campaign(STATS) { get "/en/donate" }
     assert_select "[role=progressbar][aria-valuenow='25']"
     assert_select "p.display", text: "25%"
     assert_match "$5,123", response.body

@@ -18,11 +18,11 @@ in memory, hidden if the API fails).
 
 | Path | |
 |---|---|
-| `/`, `/lab`, `/download`, `/support` | Redirect to `/en/…` or `/fr/…` from `Accept-Language` (campaign short links) |
+| `/`, `/lab`, `/download`, `/donate` | Redirect to `/en/…` or `/fr/…` from `Accept-Language` (campaign short links) |
 | `/:locale` | Home |
 | `/:locale/lab` | OpenCutList 8 LAB : download, install, feedback, episodes, gauge |
 | `/:locale/download` | Stable and LAB downloads |
-| `/:locale/support` | Funding, gauge, other ways to help |
+| `/:locale/donate` | Funding, gauge, other ways to help |
 
 ## Updating content
 

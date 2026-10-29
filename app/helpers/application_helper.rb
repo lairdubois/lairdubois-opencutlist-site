@@ -10,7 +10,7 @@ module ApplicationHelper
   end
 
   # Header link : the current page is a solid orange block, like the checked tool of the Smart toolbar.
-  # highlight : always on a pink block (Support), outlined in white when current.
+  # highlight : always on a pink block (Donate), outlined in white when current.
   def nav_link_to(path, highlight: false, &)
     active = current_page?(path)
     style = if highlight then [ "bg-lab text-white hover:bg-white hover:text-ink", "outline-2 outline-offset-2 outline-white" => active ]

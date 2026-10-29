@@ -11,7 +11,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 WIDTHS = (320, 375, 768, 1024, 1280)
-PAGES = [f"{locale}{page}" for locale in ("en", "fr") for page in ("", "/lab", "/download", "/support")]
+PAGES = [f"{locale}{page}" for locale in ("en", "fr") for page in ("", "/lab", "/download", "/donate")]
 OVERFLOWS = """() => {
   const width = document.documentElement.clientWidth, found = [];
   for (const el of document.querySelectorAll('body *')) {
