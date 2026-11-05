@@ -40,7 +40,7 @@ shared:
   # add "url" once the video is online.
   episodes:
     - { date: 2026-10-29, title: "Trailer", url: "https://www.youtube.com/watch?v=V0yUHv39Fyo" }
-    - { date: 2026-11-05, title: "Smart Draw" }
+    - { date: 2026-11-05, title: "Smart Draw and Paneling", url: "https://www.youtube.com/watch?v=LmL12MwTNhI" }
     - { date: 2026-11-12, title: "Smart Build Divider" }
     - { date: 2026-11-19, title: "Smart Build Front Panel" }
     - { date: 2026-11-26, title: "Smart Build Back Panel" }
