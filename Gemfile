@@ -46,5 +46,5 @@ end
 gem "rails-i18n", "~> 8.1"
 
 group :test do
-  gem "minitest", "~> 6.0"
+  gem "minitest", "~> 6.1"
 end
