@@ -41,14 +41,14 @@ shared:
   episodes:
     - { date: 2026-10-29, title: "Trailer", url: "https://www.youtube.com/watch?v=V0yUHv39Fyo" }
     - { date: 2026-11-05, title: "Smart Draw and Paneling", url: "https://www.youtube.com/watch?v=LmL12MwTNhI" }
-    - { date: 2026-11-12, title: "Smart Build Divider" }
-    - { date: 2026-11-19, title: "Smart Build Front Panel" }
-    - { date: 2026-11-26, title: "Smart Build Back Panel" }
-    - { date: 2026-12-03, title: "Smart Stretch" }
-    - { date: 2026-12-10, title: "Smart Build Module" }
-    - { date: 2026-12-17, title: "Smart Boolean" }
-    - { date: 2027-01-07, title: "Smart Paneling" }
+    - { date: 2026-11-12, title: "Smart Build Module", url: "https://www.youtube.com/watch?v=BjPztOzDOPA" }
+    - { date: 2026-11-19, title: "Smart Build Divider" }
+    - { date: 2026-11-26, title: "Smart Build Front Panel" }
+    - { date: 2026-12-03, title: "Smart Build Back Panel" }
+    - { date: 2026-12-10, title: "Smart Stretch" }
+    - { date: 2026-12-17, title: "Smart Boolean and Paneling" }
+    - { date: 2027-01-07, title: "To be announced" }
     - { date: 2027-01-14, title: "Grain continuity and cutlist filters" }
     - { date: 2027-01-21, title: "BXF2 and CSV import" }
     - { date: 2027-01-28, title: "Paint, Export and Axes" }
-    - { date: 2027-02-04, title: "What comes next" }
+    - { date: 2027-02-04, title: "What comes next: Smart Join and hardware" }

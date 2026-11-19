@@ -55,7 +55,7 @@ class PagesTest < ActionDispatch::IntegrationTest
     end
     assert_match "Trailer", response.body
     assert_match "Smart Draw", response.body
-    assert_match "Smart Build Divider", response.body
-    assert_no_match "Smart Build Front Panel", response.body
+    assert_match "Smart Build Module", response.body
+    assert_no_match "Smart Build Divider", response.body
   end
 end
